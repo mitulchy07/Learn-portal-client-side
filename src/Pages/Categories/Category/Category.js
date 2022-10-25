@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom';
 const Category = ({ category }) => {
   return (
     <div>
-      <h1>
-        <Link to={`/courses/${category.id}`}>{category.name}</Link>{' '}
-      </h1>
+      <div>
+        <Link
+          className='btn my-3 menu p-4 bg-base-100'
+          to={`/categories/${category.id}`}
+        >
+          {category.name}
+        </Link>
+      </div>
     </div>
   );
 };

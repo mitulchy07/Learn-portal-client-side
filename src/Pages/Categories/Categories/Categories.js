@@ -10,7 +10,6 @@ const Categories = () => {
   }, []);
   return (
     <div>
-      <h1>This is all categories {categories.length} </h1>
       {categories.map((category) => (
         <Category key={category.id} category={category}></Category>
       ))}

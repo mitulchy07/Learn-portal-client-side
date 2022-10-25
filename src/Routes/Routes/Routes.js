@@ -24,11 +24,15 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/categories/:id',
-        element: <Category></Category>,
+        element: <Courses></Courses>,
+        loader: ({ params }) =>
+          fetch(
+            `https://server-site-nx300qx8i-mitulchy07.vercel.app/categories/${params.id}`
+          ),
       },
       {
         path: '/courses',
-        element: <Courses></Courses>,
+        element: <Category></Category>,
       },
 
       {

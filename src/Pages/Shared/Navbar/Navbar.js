@@ -46,16 +46,7 @@ const Navbar = () => {
           <Link className='btn btn-ghost ' to='/faq'>
             FAQ
           </Link>
-          <select className='select select-success mx-2'>
-            <option disabled selected>
-              Select Course
-            </option>
-            {categories.map((category) => (
-              <option key={category.id} category={category}>
-                {category.name}
-              </option>
-            ))}
-          </select>
+
           <Link className='btn btn-outline btn-warning mx-2' to='/login'>
             Login
           </Link>

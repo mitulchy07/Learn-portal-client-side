@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import { useLoaderData } from 'react-router-dom';
 import Course from '../Course/Course';
 
 const Courses = () => {
-  const [courses, setCourses] = useState([]);
-  useEffect(() => {
-    fetch('https://server-site-nx300qx8i-mitulchy07.vercel.app/courses')
-      .then((res) => res.json())
-      .then((data) => setCourses(data));
-  }, []);
+  const courseData = useLoaderData();
+
   return (
-    <div>
-      {courses.map((course) => (
-        <Course key={course.id} course={course}></Course>
-      ))}
-    </div>
+    <Container className='d-flex justify-content-center'>
+      <div className='row row-cols-3 gap-2'>
+        {courseData.map((course) => (
+          <Course key={course.id} course={course}></Course>
+        ))}
+      </div>
+    </Container>
   );
 };
 

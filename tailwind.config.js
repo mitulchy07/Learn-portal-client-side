@@ -4,5 +4,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('daisyui', 'flowbite/plugin')],
+  plugins: [require('daisyui')],
 };

@@ -48,8 +48,9 @@ const Registration = () => {
           </div>
         </div>
         <div className='divider'>OR</div>
-        <div className='grid h-20 card bg-base-300 rounded-box place-items-center'>
-          content
+        <div className='btn-group'>
+          <button className='btn '>Login with Google</button>
+          <button className='btn'>Login with Github</button>
         </div>
       </div>
     </div>

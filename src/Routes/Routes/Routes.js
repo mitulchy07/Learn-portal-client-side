@@ -7,6 +7,7 @@ import Courses from '../../Pages/Courses/Courses/Courses';
 import Home from '../../Pages/Home/Home';
 import Blogs from '../../Pages/Shared/Blogs/Blogs';
 import Faq from '../../Pages/Shared/FAQ/Faq';
+import Signin from '../../Pages/Shared/Login/Signin/Signin';
 
 export const routes = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ export const routes = createBrowserRouter([
       {
         path: '/faq',
         element: <Faq></Faq>,
+      },
+      {
+        path: '/login',
+        element: <Signin></Signin>,
       },
     ],
   },

@@ -5,6 +5,8 @@ import Category from '../../Pages/Categories/Category/Category';
 import Course from '../../Pages/Courses/Course/Course';
 import Courses from '../../Pages/Courses/Courses/Courses';
 import Home from '../../Pages/Home/Home';
+import Blogs from '../../Pages/Shared/Blogs/Blogs';
+import Faq from '../../Pages/Shared/FAQ/Faq';
 
 export const routes = createBrowserRouter([
   {
@@ -16,7 +18,7 @@ export const routes = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: '/categories',
+        path: '/all-courses',
         element: <Categories></Categories>,
       },
       {
@@ -31,6 +33,14 @@ export const routes = createBrowserRouter([
       {
         path: '/courses/:id',
         element: <Course></Course>,
+      },
+      {
+        path: '/blogs',
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: '/faq',
+        element: <Faq></Faq>,
       },
     ],
   },

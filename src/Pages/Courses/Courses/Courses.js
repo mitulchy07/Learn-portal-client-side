@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Course from '../Course/Course';
 
 const Courses = () => {
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    fetch('https://server-site-nx300qx8i-mitulchy07.vercel.app/courses')
+      .then((res) => res.json())
+      .then((data) => setCourses(data));
+  }, []);
   return (
     <div>
-      <h1>This is all Courses</h1>
+      {courses.map((course) => (
+        <Course key={course.id} course={course}></Course>
+      ))}
     </div>
   );
 };

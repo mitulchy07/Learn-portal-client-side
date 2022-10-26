@@ -3,15 +3,15 @@ import { Form, Link } from 'react-router-dom';
 import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
 
 const Registration = () => {
-  const { createUser, auth } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleRegister = (event) => {
     setSuccess(false);
     const form = event.target;
-    const name = form.name.value;
-    const photo = form.name.value;
+    const name = form.displayName.value;
+    const photo = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
     if (password.length < 6) {
@@ -55,16 +55,18 @@ const Registration = () => {
                 type='text'
                 placeholder='name'
                 className='input input-bordered'
-                name='name'
+                name='displayName'
+                required
               />
               <label className='label'>
                 <span className='label-text'>Photo URL</span>
               </label>
               <input
                 type='text'
-                placeholder='photo-url'
+                placeholder='photoURL'
                 className='input input-bordered'
                 name='photo'
+                required
               />
               <label className='label'>
                 <span className='label-text'>Email</span>

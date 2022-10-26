@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div>
       <div className='navbar bg-neutral text-neutral-content'>
-        <Link className='btn btn-ghost normal-case text-xl'>
+        <Link to='/' className='btn btn-ghost normal-case text-xl'>
           Learning Portal
         </Link>
         <div>

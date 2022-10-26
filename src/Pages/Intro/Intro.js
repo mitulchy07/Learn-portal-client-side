@@ -4,19 +4,23 @@ const Intro = () => {
   return (
     <div className='my-2'>
       <div
-        className='hero min-h-screen'
-        style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}
+        className='hero'
+        style={{
+          backgroundImage: `url("https://img.freepik.com/free-vector/blue-3d-particles-background-design_1017-15410.jpg?w=1380&t=st=1666819687~exp=1666820287~hmac=15cabcd09a8c95586ecd0d4238980387ee7bc1a918fc98e561440104e2431719")`,
+        }}
       >
         <div className='hero-overlay bg-opacity-60'></div>
         <div className='hero-content text-center text-neutral-content'>
           <div className='max-w-md'>
-            <h1 className='mb-5 text-5xl font-bold'>Hello there</h1>
-            <p className='mb-5'>
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <h1 className='mb-5 text-5xl font-bold text-white'>
+              Wellcome To Learning Portal
+            </h1>
+            <p className='mb-5 text-white'>
+              We are your full-stack software development partner, web
+              applications, mobile applications, IoT solutions, Blockchain
+              technology. Tech Off is a one-stop platform for learning.
             </p>
-            <button className='btn btn-outline btn-ghost'>Get Started</button>
+            <button className='btn btn-outline'>About Us</button>
           </div>
         </div>
       </div>

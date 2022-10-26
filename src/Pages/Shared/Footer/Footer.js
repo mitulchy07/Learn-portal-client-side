@@ -48,7 +48,10 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>Copyright © 2022 - All right reserved by Mitul Chowdhuri.</p>
+        <p>
+          Copyright © 2022 - All rights reserved by Mitul Chowdhuri and
+          Programming Hero.
+        </p>
       </div>
     </footer>
   );

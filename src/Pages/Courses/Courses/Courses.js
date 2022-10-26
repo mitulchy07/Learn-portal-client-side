@@ -7,7 +7,7 @@ import './Courses.css';
 
 const Courses = () => {
   const courseData = useLoaderData();
-  console.log(courseData);
+
   return (
     <Container>
       <Row>
@@ -16,11 +16,8 @@ const Courses = () => {
         </Col>
         <Col lg='10'>
           <div className='course-card'>
-            {courseData.map((courseDetails) => (
-              <Course
-                key={courseDetails.id}
-                courseDetails={courseDetails}
-              ></Course>
+            {courseData.map((courseData) => (
+              <Course key={courseData.id} courseDetails={courseData}></Course>
             ))}
           </div>
         </Col>

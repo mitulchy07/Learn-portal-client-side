@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Course = ({ courseDetails }) => {
-  console.log(courseDetails);
   return (
     <div className='card bg-base-100 my-2 text-white col-sm-12'>
       <figure>
@@ -18,12 +18,14 @@ const Course = ({ courseDetails }) => {
           <div className='badge badge-outline'>
             {courseDetails.ratings}.30 h
           </div>
-          <div className='badge badge-outline'>Course</div>
+          <div className='badge badge-outline'> {courseDetails.price} $ </div>
           <div className='badge badge-outline'>
             {courseDetails.ratings} stars
           </div>
         </div>
-        <button className='btn btn-primary'>{courseDetails.price}</button>
+        <Link to={`/courses/${courseDetails.id}`}>
+          <button className='btn btn-primary'>See Data</button>
+        </Link>
       </div>
     </div>
   );

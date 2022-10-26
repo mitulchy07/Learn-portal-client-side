@@ -9,6 +9,7 @@ const TopCourse = () => {
           <img
             src='https://placeimg.com/260/400/arch'
             className='max-w-sm rounded-lg shadow-2xl'
+            alt='Course'
           />
           <div>
             <h1 className='text-5xl font-bold text-white'>Box Office News!</h1>

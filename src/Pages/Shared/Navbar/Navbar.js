@@ -1,13 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    fetch('https://server-site-nx300qx8i-mitulchy07.vercel.app/categories')
-      .then((res) => res.json())
-      .then((data) => setCategories(data));
-  }, []);
   return (
     <div>
       <div className='navbar bg-neutral text-neutral-content'>

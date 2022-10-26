@@ -45,12 +45,12 @@ const Registration = () => {
               </Link>
             </label>
             <button className='btn btn-primary'>Register</button>
+            <div className='divider'>OR</div>
+            <div className='btn-group'>
+              <button className='btn '>Login with Google</button>
+              <button className='btn'>Login with Github</button>
+            </div>
           </div>
-        </div>
-        <div className='divider'>OR</div>
-        <div className='btn-group'>
-          <button className='btn '>Login with Google</button>
-          <button className='btn'>Login with Github</button>
         </div>
       </div>
     </div>

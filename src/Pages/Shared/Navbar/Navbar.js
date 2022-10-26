@@ -39,6 +39,9 @@ const Navbar = () => {
           <Link className='btn btn-ghost ' to='/'>
             Home
           </Link>
+          <Link className='btn btn-ghost ' to='/categories/4'>
+            Courses
+          </Link>
 
           <Link className='btn btn-ghost ' to='/blogs'>
             Blogs

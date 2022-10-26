@@ -1,27 +1,17 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
-import Intro from '../Pages/Intro/Intro';
 import Footer from '../Pages/Shared/Footer/Footer';
 import Header from '../Pages/Shared/Header/Header';
-import LeftSideNav from '../Pages/Shared/LeftSideNav/LeftSideNav';
 
 const Main = () => {
   return (
     <div>
-      <Header></Header>
       <Container>
-        <Intro></Intro>
-        <Row>
-          <Col lg='3'>
-            <LeftSideNav></LeftSideNav>
-          </Col>
-          <Col lg='9'>
-            <Outlet></Outlet>
-          </Col>
-        </Row>
+        <Header></Header>
+        <Outlet></Outlet>
+        <Footer></Footer>
       </Container>
-      <Footer></Footer>
     </div>
   );
 };

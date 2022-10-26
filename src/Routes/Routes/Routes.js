@@ -1,7 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../../layout/Main';
-import Categories from '../../Pages/Categories/Categories/Categories';
-import Category from '../../Pages/Categories/Category/Category';
 import Course from '../../Pages/Courses/Course/Course';
 import Courses from '../../Pages/Courses/Courses/Courses';
 import Home from '../../Pages/Home/Home';
@@ -20,8 +18,12 @@ export const routes = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: '/all-courses',
-        element: <Categories></Categories>,
+        path: '/course-categories/4',
+        element: <Courses></Courses>,
+        loader: ({ params }) =>
+          fetch(
+            `https://server-site-nx300qx8i-mitulchy07.vercel.app/categories/${params.id}`
+          ),
       },
       {
         path: '/categories/:id',
@@ -30,10 +32,6 @@ export const routes = createBrowserRouter([
           fetch(
             `https://server-site-nx300qx8i-mitulchy07.vercel.app/categories/${params.id}`
           ),
-      },
-      {
-        path: '/courses',
-        element: <Category></Category>,
       },
       {
         path: '/courses/:id',
@@ -56,5 +54,9 @@ export const routes = createBrowserRouter([
         element: <Registration></Registration>,
       },
     ],
+  },
+  {
+    path: '*',
+    element: 'No Data Found',
   },
 ]);

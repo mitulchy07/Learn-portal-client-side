@@ -8,6 +8,7 @@ import Blogs from '../../Pages/Shared/Blogs/Blogs';
 import Faq from '../../Pages/Shared/FAQ/Faq';
 import Registration from '../../Pages/Shared/Login/Registration/Registration';
 import Signin from '../../Pages/Shared/Login/Signin/Signin';
+import PrivateRoute from '../PrivateRoute';
 
 export const routes = createBrowserRouter([
   {
@@ -60,7 +61,11 @@ export const routes = createBrowserRouter([
       },
       {
         path: '/courses/:id/checkout',
-        element: <Checkout></Checkout>,
+        element: (
+          <PrivateRoute>
+            <Checkout></Checkout>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://server-site-nx300qx8i-mitulchy07.vercel.app/courses/${params.id}`

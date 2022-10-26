@@ -23,25 +23,19 @@ export const routes = createBrowserRouter([
         path: '/course-categories/4',
         element: <Courses></Courses>,
         loader: ({ params }) =>
-          fetch(
-            `https://server-site-nx300qx8i-mitulchy07.vercel.app/categories/${params.id}`
-          ),
+          fetch(`https://server-site.vercel.app/categories/${params.id}`),
       },
       {
         path: '/categories/:id',
         element: <Courses></Courses>,
         loader: ({ params }) =>
-          fetch(
-            `https://server-site-nx300qx8i-mitulchy07.vercel.app/categories/${params.id}`
-          ),
+          fetch(`https://server-site.vercel.app/categories/${params.id}`),
       },
       {
         path: '/courses/:id',
         element: <DetailsCourse></DetailsCourse>,
         loader: ({ params }) =>
-          fetch(
-            `https://server-site-nx300qx8i-mitulchy07.vercel.app/courses/${params.id}`
-          ),
+          fetch(`https://server-site.vercel.app/courses/${params.id}`),
       },
       {
         path: '/blogs',
@@ -67,9 +61,7 @@ export const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://server-site-nx300qx8i-mitulchy07.vercel.app/courses/${params.id}`
-          ),
+          fetch(`https://server-site.vercel.app/courses/${params.id}`),
       },
     ],
   },

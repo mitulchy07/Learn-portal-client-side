@@ -24,8 +24,6 @@ const Signin = () => {
       });
   };
 
-  const { user } = useContext(AuthContext);
-  console.log(user);
   return (
     <Form onSubmit={handleUser}>
       <div>

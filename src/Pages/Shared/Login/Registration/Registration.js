@@ -14,10 +14,6 @@ const Registration = () => {
     const photo = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    if (/(?=.*[A-Z])/.test(password)) {
-      setErrorMsg('Please Provide at least one uppercase');
-      return;
-    }
     if (password.length < 6) {
       setErrorMsg('Password Should be at least 6 Charecter.');
       return;

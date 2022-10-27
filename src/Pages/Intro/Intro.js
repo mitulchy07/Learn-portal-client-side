@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Intro = () => {
   return (
@@ -20,7 +21,9 @@ const Intro = () => {
               applications, mobile applications, IoT solutions, Blockchain
               technology. Tech Off is a one-stop platform for learning.
             </p>
-            <button className='btn btn-outline'>About Us</button>
+            <Link to='/registration' className='btn btn-outline'>
+              Sign Up
+            </Link>
           </div>
         </div>
       </div>

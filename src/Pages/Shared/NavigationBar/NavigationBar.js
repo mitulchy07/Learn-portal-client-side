@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import logo from '../../../images/logo.svg';
-
+import { Tooltip } from 'react-tippy';
+import 'react-tippy/dist/tippy.css';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import logo from '../../../images/logo.svg';
 import Categories from '../../Categories/Categories/Categories';
 
 const NavigationBar = () => {
@@ -51,15 +53,27 @@ const NavigationBar = () => {
               FAQ
             </Link>
             {user?.photoURL ? (
-              <img
-                src={user?.photoURL}
-                width='30'
-                height='10'
-                className='d-none d-lg-block align-top rounded-circle'
-                alt='React Bootstrap logo'
-              />
+              <Tooltip
+                className='btn btn-ghost mx-1'
+                title={user?.displayName ? user?.displayName : user?.email}
+                position='bottom'
+              >
+                <img
+                  src={user?.photoURL}
+                  width='30'
+                  height='10'
+                  className='d-none d-lg-block align-top rounded-circle'
+                  alt='React Bootstrap logo'
+                />
+              </Tooltip>
             ) : (
-              ' '
+              <Tooltip
+                className='btn btn-ghost mx-1 py-3 '
+                title={user?.displayName ? user?.displayName : user?.email}
+                position='bottom'
+              >
+                <FaUserAlt />
+              </Tooltip>
             )}
             {user ? (
               <Link

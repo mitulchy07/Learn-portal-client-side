@@ -1,19 +1,22 @@
 import React, { useContext, useState } from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Button, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
 
 const Registration = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserName } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleRegister = (event) => {
+    event.preventDefault();
     setSuccess(false);
     const form = event.target;
-    const name = form.displayName.value;
-    const photo = form.photoURL.value;
+
     const email = form.email.value;
     const password = form.password.value;
+    const name = form.name.value;
+    const img = form.photoURL.value;
     if (password.length < 6) {
       setErrorMsg('Password Should be at least 6 Charecter.');
       return;
@@ -23,84 +26,52 @@ const Registration = () => {
       .then((result) => {
         setSuccess(true);
         form.reset();
-        // verifyUser();
         const user = result.user;
+        updateUserName(name, img);
         console.log(user);
       })
       .catch((error) => {
         setErrorMsg(error.message);
-        console.error(error);
       });
   };
 
-  // const verifyUser = () => {
-  //   sendEmailVerification(auth.currentUser)
-  //     .then(() => {
-  //       alert('Please Check your email (spam folder also) for verify.');
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // };
   return (
-    <Form onSubmit={handleRegister}>
-      <div className='m-2'>
-        <div className='flex flex-col w-full border-opacity-50'>
-          <div>
-            <div className='form-control p-5 my-4'>
-              <label className='label'>
-                <span className='label-text'>Name</span>
-              </label>
-              <input
-                type='text'
-                placeholder='name'
-                className='input input-bordered'
-                name='displayName'
-                required
-              />
-              <label className='label'>
-                <span className='label-text'>Photo URL</span>
-              </label>
-              <input
-                type='text'
-                placeholder='photoURL'
-                className='input input-bordered'
-                name='photo'
-                required
-              />
-              <label className='label'>
-                <span className='label-text'>Email</span>
-              </label>
-              <input
-                type='email'
-                placeholder='email'
-                className='input input-bordered'
-                name='email'
-                required
-              />
-              <label className='label'>
-                <span className='label-text'>Password</span>
-              </label>
-              <input
-                type='password'
-                placeholder='password'
-                className='input input-bordered'
-                name='password'
-                required
-              />
-              <label className='label'>
-                <Link to='/login' className='label-text-alt link link-hover'>
-                  Already have an account?
-                </Link>
-              </label>
-              <button className='btn btn-primary'>Register</button>
-              <p className='text-danger'> {errorMsg} </p>
-              {success && <p className='text-success'>Registration Success!</p>}
-            </div>
-          </div>
+    <div className='border border-info rounded'>
+      <Form onSubmit={handleRegister} className='text-white w-50 mx-auto p-2'>
+        <Form.Group className='mb-3 ' controlId='formBasicEmail'>
+          <Form.Label>Full Name</Form.Label>
+          <Form.Control type='name' name='name' placeholder='Full Name' />
+        </Form.Group>
+        <Form.Group className='mb-3' controlId='formBasicEmail'>
+          <Form.Label>Photo URL</Form.Label>
+          <Form.Control type='email' name='photoURL' placeholder='Photo URL' />
+        </Form.Group>
+        <Form.Group className='mb-3' controlId='formBasicEmail'>
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type='email' name='email' placeholder='Enter email' />
+        </Form.Group>
+        <Form.Group className='mb-3' controlId='formBasicPassword'>
+          <Form.Label>Password</Form.Label>
+          <Form.Control
+            type='password'
+            name='password'
+            placeholder='Password'
+          />
+        </Form.Group>
+        {success ? (
+          <p className='text-success'>Registration Successfull</p>
+        ) : (
+          ' '
+        )}
+        <p className='text-danger'>{errorMsg} </p>
+        <div className='my-3'>
+          <Link to='/login'>Already have an account?</Link>
         </div>
-      </div>
-    </Form>
+        <Button className='btn btn-success w-100' type='submit'>
+          Register
+        </Button>
+      </Form>
+    </div>
   );
 };
 

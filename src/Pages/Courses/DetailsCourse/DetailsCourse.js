@@ -7,7 +7,7 @@ const DetailsCourse = () => {
 
   return (
     <Container>
-      <div className='card lg:card-side bg-base-100 shadow-xl p-5 m-10 text-white'>
+      <div className='card lg:card-side bg-base-100 shadow-xl pl-4 m-10 text-white'>
         <figure>
           <img
             src={details.img}

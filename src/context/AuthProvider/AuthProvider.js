@@ -38,6 +38,14 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signOut(auth);
   };
+  const updateUserName = (name, img) => {
+    updateUserName(auth.currentUser, {
+      displayName: name,
+      photoURL: img,
+    })
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -56,6 +64,7 @@ const AuthProvider = ({ children }) => {
     handleGoogleSignIn,
     handleGithubSignIn,
     loading,
+    updateUserName,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

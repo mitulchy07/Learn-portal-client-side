@@ -1,32 +1,41 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const DetailsCourse = () => {
   const details = useLoaderData();
 
   return (
-    <div>
-      <div className='hero bg-base-200 text-white'>
-        <div className='hero-content flex-col lg:flex-row'>
+    <Container>
+      <div className='card lg:card-side bg-base-100 shadow-xl p-5 m-10 text-white'>
+        <figure>
           <img
-            src='https://placeimg.com/260/400/arch'
-            className='max-w-sm rounded-lg shadow-2xl'
-            alt='course'
+            src={details.img}
+            alt='Album'
+            className='max-w-xs rounded-lg shadow-2xl my-4'
           />
+        </figure>
+        <div className='card-body'>
           <div>
-            <h1 className='text-5xl font-bold'> {details.name} </h1>
-            <p className='py-6'>
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <Link to={`/courses/${details.id}/checkout`}>
-              <button className='btn btn-primary'>Enroll Now!</button>
+            <h2 className='card-title text-info'>{details.name}</h2>
+            <p>{details.details}</p>
+          </div>
+          <div className='card-actions justify-start'>
+            <div className='badge badge-outline'>{details.ratings}.30 h</div>
+            <div className='badge badge-outline'> {details.price} $ </div>
+            <div className='badge badge-outline'>{details.ratings} stars</div>
+          </div>
+          <div className='card-actions justify-start'>
+            <Link
+              className='btn btn-primary'
+              to={`/courses/${details.id}/checkout`}
+            >
+              Enroll Now
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

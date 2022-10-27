@@ -6,13 +6,11 @@ import Header from '../Pages/Shared/Header/Header';
 
 const Main = () => {
   return (
-    <div>
-      <Container>
-        <Header></Header>
-        <Outlet></Outlet>
-        <Footer></Footer>
-      </Container>
-    </div>
+    <Container className='p-2'>
+      <Header></Header>
+      <Outlet></Outlet>
+      <Footer></Footer>
+    </Container>
   );
 };
 

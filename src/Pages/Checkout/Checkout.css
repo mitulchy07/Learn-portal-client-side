@@ -1,0 +1,9 @@
+.heading-div {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .heading-div {
+    display: block;
+  }
+}

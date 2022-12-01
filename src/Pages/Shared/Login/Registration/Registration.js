@@ -44,7 +44,7 @@ const Registration = () => {
         </Form.Group>
         <Form.Group className='mb-3' controlId='formBasicEmail'>
           <Form.Label>Photo URL</Form.Label>
-          <Form.Control type='email' name='photoURL' placeholder='Photo URL' />
+          <Form.Control type='name' name='photoURL' placeholder='Photo URL' />
         </Form.Group>
         <Form.Group className='mb-3' controlId='formBasicEmail'>
           <Form.Label>Email address</Form.Label>
